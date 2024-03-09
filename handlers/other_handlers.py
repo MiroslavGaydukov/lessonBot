@@ -1,6 +1,7 @@
 from aiogram.types import Message
 from aiogram.filters import Command, CommandStart
 from aiogram import Router, F
+from lexicon.lexicon import LEXICON_RU
 
 router = Router()
 
@@ -9,3 +10,4 @@ router = Router()
 @router.message()
 async def send_echo(message: Message):
     await message.answer('Я не понимать..')
+    await message.answer(LEXICON_RU['not_cmd'])
